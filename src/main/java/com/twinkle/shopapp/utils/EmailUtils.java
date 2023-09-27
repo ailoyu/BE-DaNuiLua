@@ -38,8 +38,8 @@ public class EmailUtils {
     // Email: danuiluahongquang@gmail.com
     // Password: eerapsmzyzmkuljz
 
-    final static String from = "danuiluahongquang@gmail.com";
-    final static String password = "gigh umpj xiwz nrkw";
+    final static String from = "quangtrinhhuynh02@gmail.com";
+    final static String password = "hepn yoyz ovqz josj";
 
     public static void sendEmail(String to, String tieuDe, String noiDung) {
 
