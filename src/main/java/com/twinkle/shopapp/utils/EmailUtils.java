@@ -39,7 +39,7 @@ public class EmailUtils {
     // Password: eerapsmzyzmkuljz
 
     final static String from = "danuiluahongquang@gmail.com";
-    final static String password = "eerapsmzyzmkuljz";
+    final static String password = "gigh umpj xiwz nrkw";
 
     public static void sendEmail(String to, String tieuDe, String noiDung) {
 
