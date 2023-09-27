@@ -35,11 +35,11 @@ public class EmailUtils {
         return s;
     }
 
-    // Email: quangtrinhhuynh02@gmail.com
-    // Password: snvrqopjhhrptbgb
+    // Email: danuiluahongquang@gmail.com
+    // Password: eerapsmzyzmkuljz
 
-    final static String from = "quangtrinhhuynh02@gmail.com";
-    final static String password = "snvrqopjhhrptbgb";
+    final static String from = "danuiluahongquang@gmail.com";
+    final static String password = "eerapsmzyzmkuljz";
 
     public static void sendEmail(String to, String tieuDe, String noiDung) {
 
