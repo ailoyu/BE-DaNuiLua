@@ -487,7 +487,7 @@ public class EmailUtils {
                             "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:5px 20px 5px 10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                             "        \n" +
                             "  <div style=\"font-size: 14px; line-height: 140%; text-align: right; word-wrap: break-word;\">\n" +
-                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px;\">"+orderDetail.getProduct().getPrice()+" $</span></p>\n" +
+                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px; float: left;\">"+orderDetail.getProduct().getPrice()+" VND</span></p>\n" +
                             "  </div>\n" +
                             "\n" +
                             "      </td>\n" +
@@ -563,19 +563,6 @@ public class EmailUtils {
                 "  <div style=\"height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;\">\n" +
                 "  <!--[if (!mso)&(!IE)]><!--><div style=\"box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;\"><!--<![endif]-->\n" +
                 "  \n" +
-                "<table style=\"font-family:arial,helvetica,sans-serif;\" role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\">\n" +
-                "  <tbody>\n" +
-                "    <tr>\n" +
-                "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 15px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
-                "        \n" +
-                "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><b>Phí ship:<b></span></p>\n" +
-                "  </div>\n" +
-                "\n" +
-                "      </td>\n" +
-                "    </tr>\n" +
-                "  </tbody>\n" +
-                "</table>\n" +
                 "\n" +
                 "  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->\n" +
                 "  </div>\n" +
@@ -586,19 +573,6 @@ public class EmailUtils {
                 "  <div style=\"height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;\">\n" +
                 "  <!--[if (!mso)&(!IE)]><!--><div style=\"box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;\"><!--<![endif]-->\n" +
                 "  \n" +
-                "<table style=\"font-family:arial,helvetica,sans-serif;\" role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\">\n" +
-                "  <tbody>\n" +
-                "    <tr>\n" +
-                "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 21px 15px 10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
-                "        \n" +
-                "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><b>0 $<b></span></p>\n" +
-                "  </div>\n" +
-                "\n" +
-                "      </td>\n" +
-                "    </tr>\n" +
-                "  </tbody>\n" +
-                "</table>\n" +
                 "\n" +
                 "  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->\n" +
                 "  </div>\n" +
@@ -652,7 +626,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 21px 10px 10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>"+order.getTotalMoney()+" $</strong></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px; float: left;\"><strong>"+order.getTotalMoney()+" VND</strong></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -785,7 +759,8 @@ public class EmailUtils {
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
                 "    <p style=\"line-height: 140%;\">Đây là một email tự động, vui lòng không trả lời email này.</p>\n" +
                 "<p style=\"line-height: 140%;\">Chân thành cảm ơn bạn,</p>\n" +
-                "<p style=\"line-height: 140%;\">Liên hệ: <a href=\"tel:+0918 245 977\">0918 245 977</a></p>\n" +
+                "<p style=\"line-height: 140%;\">Liên hệ: <a href=\"tel:0918 245 977\">0918 245 977</a></p>\n" +
+                "<p style=\"line-height: 140%;\">Nếu bạn chưa thực hiện thanh toán, bạn có thể chuyển khoản qua: </p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -825,7 +800,7 @@ public class EmailUtils {
                 "  <tr>\n" +
                 "    <td style=\"padding-right: 0px;padding-left: 0px;\" align=\"center\">\n" +
                 "      <a href=\"https://app.bayengage.com\" target=\"_blank\">\n" +
-                "      <img align=\"center\" border=\"0\" src=\"https://cdn.shoplightspeed.com/shops/612380/files/3939661/1652x1652x2/letter-banner-glitter-twinkle-first-birthday.jpg\" alt=\"Image\" title=\"Image\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 180px;\" width=\"180\"/>\n" +
+                "      <img align=\"center\" border=\"0\" src=\"https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/382430858_1040604773611019_4522250894307592602_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=49d041&_nc_ohc=-_RUTyIf-F8AX9qSxxc&_nc_ht=scontent.fsgn5-9.fna&cb_e2o_trans=t&oh=00_AfAtySicxtQqfG6hMSwbhf64_56ZTl_4TlzAa1SLFrbhvg&oe=651A7C95\" alt=\"Image\" title=\"Image\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 180px;\" width=\"180\"/>\n" +
                 "      </a>\n" +
                 "    </td>\n" +
                 "  </tr>\n" +
