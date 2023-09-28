@@ -3,10 +3,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/shopapp2
+    url: jdbc:mysql://kol0i6elxdrgp9ey:caskofnxovv5r1vw@pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/uxgfhgxyelocad7d?reconnect=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password:
+    username: kol0i6elxdrgp9ey
+    password: caskofnxovv5r1vw
 
   spring:
 
