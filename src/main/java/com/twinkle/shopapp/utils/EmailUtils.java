@@ -320,7 +320,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:25px 10px 20px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">Email này là để xác nhận đơn hàng của bạn. </span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>Order ID: "+order.getId()+"</strong></span></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">Email này là để xác nhận đơn hàng của bạn. </span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>Mã đơn hàng: "+order.getId()+"</strong></span></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
