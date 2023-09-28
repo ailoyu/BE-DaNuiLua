@@ -41,7 +41,7 @@ public class EmailUtils {
     final static String from = "danuiluahongquang@gmail.com";
     final static String password = "siwaslsscstrecwt";
 
-    public static void sendEmail(String to, String tieuDe, String noiDung) {
+    public static void sendEmail(String[] to, String tieuDe, String noiDung) {
 
 
         // Properties : khai báo các thuộc tính
@@ -75,7 +75,13 @@ public class EmailUtils {
             // Người gửi
             msg.setFrom(from);
             // Người nhận
-            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
+//            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
+
+            InternetAddress[] recipientAddresses = new InternetAddress[to.length];
+            for (int i = 0; i < to.length; i++) {
+                recipientAddresses[i] = new InternetAddress(to[i]);
+            }
+            msg.setRecipients(Message.RecipientType.TO, recipientAddresses);
             // Tiêu đề email
             msg.setSubject(tieuDe, "UTF-8");
             // Quy định ngày gửi

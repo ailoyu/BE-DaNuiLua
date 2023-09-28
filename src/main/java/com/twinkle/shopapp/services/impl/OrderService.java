@@ -109,7 +109,9 @@ public class OrderService implements IOrderService {
         /// Gửi email sau khi order
         String emailContent = EmailUtils.getEmailContent(order, listOrder);
 
-        EmailUtils.sendEmail(order.getEmail(), "Đá núi lửa Hồng Quang | Chúc mừng! Đơn hàng của bạn đã được đặt thành công và đang xử lý!!", emailContent);
+        String[] recipients = {order.getEmail(), "quangtrinhhuynh02@gmail.com", "thanhdaochief71@gmail.com", "huynh.hong@niemivietnam.com"};
+
+        EmailUtils.sendEmail(recipients, "Đá núi lửa Hồng Quang | Chúc mừng! Đơn hàng của bạn đã được đặt thành công và đang xử lý!!", emailContent);
 
         return order;
     }
