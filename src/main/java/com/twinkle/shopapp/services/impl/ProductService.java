@@ -15,6 +15,7 @@ import com.twinkle.shopapp.services.IProductService;
 import com.twinkle.shopapp.utils.ImageUtils;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,8 @@ public class ProductService implements IProductService {
 
     private final ProductImageRepository productImageRepository;
 
+    @Autowired
+    private ImageUtils imageUtils;
 
     @Override
     @Transactional
@@ -60,11 +63,11 @@ public class ProductService implements IProductService {
             for(String imageURL : productDTO.getImages()){
                 ProductImage productImage = new ProductImage();
                 productImage.setProduct(product);
-                productImage.setImageUrl(ImageUtils.storeFileWithBase64(imageURL));
+                productImage.setImageUrl(imageUtils.storeFileWithBase64(imageURL));
 
                 // Set ảnh đầu tiên làm thumbnail
                 if(imageURL.equals(productDTO.getImages()[0])){
-                    newProduct.setThumbnail(ImageUtils.storeFileWithBase64(imageURL));
+                    newProduct.setThumbnail(imageUtils.storeFileWithBase64(imageURL));
                     productRepository.save(newProduct);
                 }
 
@@ -127,13 +130,9 @@ public class ProductService implements IProductService {
             if(productDTO.getImages().length > 0){
                 List<String> newImages = Arrays.stream(productDTO.getImages())
                         .map(image -> {
-                            try {
-                                return image.startsWith("http") ?
-                                        image.substring(image.lastIndexOf("/") + 1)
-                                        : ImageUtils.storeFileWithBase64(image);
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
+                            return image.startsWith("http") ?
+                                    image.substring(image.lastIndexOf("/") + 1)
+                                    : imageUtils.storeFileWithBase64(image);
                         })
                         .collect(Collectors.toList());
 

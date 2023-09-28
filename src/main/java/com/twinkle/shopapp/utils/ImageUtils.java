@@ -1,6 +1,10 @@
 package com.twinkle.shopapp.utils;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,6 +17,9 @@ import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 import java.util.UUID;
 
+import java.util.Map;
+
+@Component
 public class ImageUtils {
 
     public static String storeFile(MultipartFile file) throws IOException {
@@ -37,30 +44,36 @@ public class ImageUtils {
         return contentType != null && contentType.startsWith("/image");
     }
 
-    public static String storeFileWithBase64(String base64) throws IOException {
-        String[] strings = base64.split(",");
-        String extension;
-        switch (strings[0]) {//check image's extension
-            case "data:image/jpeg;base64":
-                extension = "jpeg";
-                break;
-            case "data:image/png;base64":
-                extension = "png";
-                break;
-            default://should write cases for more images types
-                extension = "jpg";
-                break;
+    @Autowired
+    private Cloudinary cloudinary;
+
+    public String storeFileWithBase64(String base64){
+        try{
+            String[] strings = base64.split(",");
+            String extension;
+            switch (strings[0]) {//check image's extension
+                case "data:image/jpeg;base64":
+                    extension = "jpeg";
+                    break;
+                case "data:image/png;base64":
+                    extension = "png";
+                    break;
+                default://should write cases for more images types
+                    extension = "jpg";
+                    break;
+            }
+
+            //convert base64 string to arrays of binary
+            byte[] imageAvatar = DatatypeConverter.parseBase64Binary(strings[1]);
+            // push arrays of binary to cloudinary
+            Map r = this.cloudinary.uploader().upload(imageAvatar,
+                    ObjectUtils.asMap("resource_type", "auto"));
+            String img = (String) r.get("secure_url");
+            return img;
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
         }
-
-        //convert base64 string to binary data
-        byte[] imageAvatar = DatatypeConverter.parseBase64Binary(strings[1]);
-        String generatedFileName = UUID.randomUUID().toString();
-        CustomMultipartFile multipartFile = new CustomMultipartFile(imageAvatar);
-        generatedFileName = generatedFileName + "." + extension;
-
-        String fileName = storeFileInFolder(multipartFile, generatedFileName);
-        return fileName;
-
     }
 
     private static String storeFileInFolder(MultipartFile file, String generatedFileName) throws IOException {

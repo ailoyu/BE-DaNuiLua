@@ -1,5 +1,6 @@
 package com.twinkle.shopapp.services.impl;
 
+import com.cloudinary.Cloudinary;
 import com.twinkle.shopapp.component.JwtTokenUtils;
 import com.twinkle.shopapp.component.LocalizationUtils;
 import com.twinkle.shopapp.dtos.UserDTO;
@@ -14,6 +15,7 @@ import com.twinkle.shopapp.services.IUserService;
 import com.twinkle.shopapp.utils.ImageUtils;
 import com.twinkle.shopapp.utils.MessageKeys;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -129,6 +131,9 @@ public class UserService implements IUserService {
                 .dateOfBirth(existingUser.getDateOfBirth().toString())
                 .build();
     }
+
+    @Autowired
+    private ImageUtils imageUtils;
     @Override
     @Transactional
     public LoginResponse updateUserByPhoneNumber(UserDTO userDTO) throws DataNotFoundException, IOException {
@@ -139,7 +144,7 @@ public class UserService implements IUserService {
 
         // Base64 -> MultipartFile
         if(userDTO.getAvatar() != null){
-            String generatedFileName = ImageUtils.storeFileWithBase64(userDTO.getAvatar());
+            String generatedFileName = imageUtils.storeFileWithBase64(userDTO.getAvatar());
             existingUser.setAvatar(generatedFileName);
         }
 
