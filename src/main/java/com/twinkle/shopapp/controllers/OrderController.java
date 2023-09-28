@@ -4,6 +4,7 @@ package com.twinkle.shopapp.controllers;
 import com.twinkle.shopapp.component.LocalizationUtils;
 import com.twinkle.shopapp.dtos.OrderDTO;
 import com.twinkle.shopapp.models.Order;
+import com.twinkle.shopapp.responses.CategoryResponse;
 import com.twinkle.shopapp.services.IOrderService;
 import com.twinkle.shopapp.utils.MessageKeys;
 import jakarta.validation.Valid;
@@ -14,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("${api.prefix}/orders")
@@ -60,16 +62,19 @@ public class OrderController {
 
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteOrder(@Valid @PathVariable Long id){
+    @DeleteMapping("/")
+    public ResponseEntity<?> deleteOrder(@RequestBody Map<String, Long[]> request){
         // Xóa mềm => Cập nhật active = false;
         try{
-            orderService.deleteOrder(id);
+            Long[] ids = request.get("ids");
+            orderService.deleteOrder(ids);
             return ResponseEntity.ok(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_ORDER_SUCCESSFULLY));
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    
 
     @GetMapping("/history/{user_id}")
     public ResponseEntity<?> getOrdersByUserId(@Valid @PathVariable("user_id") Long userId){

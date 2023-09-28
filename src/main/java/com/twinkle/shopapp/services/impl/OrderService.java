@@ -133,15 +133,13 @@ public class OrderService implements IOrderService {
 
     @Override
     @Transactional // rollback dữ liệu khi bị sai gì đó
-    public void deleteOrder(Long id) throws DataNotFoundException {
-        Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new DataNotFoundException("Ko tìm thấy đơn hàng để xóa"));
+    public void deleteOrder(Long[] ids) throws DataNotFoundException {
+        for(long id : ids){
+            Optional<Order> optionalorder = orderRepository.findById(id);
+            if(optionalorder.isPresent()){
+                orderRepository.delete(optionalorder.get()); // nếu có product trong DB ms xóa
 
-        // Ko xóa cứng => Chỉ xóa mềm
-
-        if(order != null){
-            order.setActive(false);
-            orderRepository.save(order);
+            }
         }
     }
 
