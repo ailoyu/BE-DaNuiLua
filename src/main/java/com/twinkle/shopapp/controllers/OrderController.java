@@ -68,13 +68,15 @@ public class OrderController {
         try{
             Long[] ids = request.get("ids");
             orderService.deleteOrder(ids);
-            return ResponseEntity.ok(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_ORDER_SUCCESSFULLY));
+            return ResponseEntity.ok().body(CategoryResponse.builder()
+                    .message(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_ORDER_SUCCESSFULLY))
+                    .build());
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
-    
+
 
     @GetMapping("/history/{user_id}")
     public ResponseEntity<?> getOrdersByUserId(@Valid @PathVariable("user_id") Long userId){
