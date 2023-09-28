@@ -326,7 +326,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:25px 10px 20px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">Email này là để xác nhận đơn hàng của bạn</span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>Mã đơn hàng: "+order.getId()+"</strong></span></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">Email này là để xác nhận đơn hàng của bạn </span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>Mã đơn hàng: "+order.getId()+"</strong></span></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -727,7 +727,7 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Phương thức thanh toán</strong></h4>\n" +
+                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Số điện thoại</strong></h4>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -739,7 +739,7 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:6px 10px 10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <h3 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\">Chuyển khoản</h3>\n" +
+                "  <h3 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\">"+order.getPhoneNumber()+"</h3>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
