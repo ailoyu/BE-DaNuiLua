@@ -39,7 +39,7 @@ public class EmailUtils {
     // Password: eerapsmzyzmkuljz
 
     final static String from = "danuiluahongquang@gmail.com";
-    final static String password = "eerapsmzyzmkuljz";
+    final static String password = "siwaslsscstrecwt";
 
     public static void sendEmail(String to, String tieuDe, String noiDung) {
 
@@ -248,7 +248,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 42px; line-height: 140%; text-align: center; word-wrap: break-word;\">\n" +
-                "    <p style=\"line-height: 140%;\"><strong><span style=\"color: #ecf0f1; line-height: 58.8px;\">Twinkle</span></strong></p>\n" +
+                "    <p style=\"line-height: 140%;\"><strong><span style=\"color: #ecf0f1; line-height: 35px;\">Đặt hàng thành công!</span></strong></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -305,8 +305,8 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 130%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Thank you "+ order.getFullName()+",</span></strong></span></p>\n" +
-                "<p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Your order has beed received</span></strong></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Cảm ơn "+ order.getFullName()+",</span></strong></span></p>\n" +
+                "<p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Đơn hàng của bạn đang được xử lý và chờ xác nhận</span></strong></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -320,7 +320,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:25px 10px 20px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">This email is to confirm your recent order. </span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>Order ID: "+order.getId()+"</strong></span></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">Email này là để xác nhận đơn hàng của bạn. </span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>Order ID: "+order.getId()+"</strong></span></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -358,7 +358,7 @@ public class EmailUtils {
                             "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                             "        \n" +
                             "  <div style=\"font-size: 14px; color: #ffffff; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Product</strong></span></p>\n" +
+                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Sản phẩm</strong></span></p>\n" +
                             "  </div>\n" +
                             "\n" +
                             "      </td>\n" +
@@ -381,7 +381,7 @@ public class EmailUtils {
                             "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                             "        \n" +
                             "  <div style=\"font-size: 14px; color: #ffffff; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Qty</strong></span></p>\n" +
+                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Số lượng</strong></span></p>\n" +
                             "  </div>\n" +
                             "\n" +
                             "      </td>\n" +
@@ -404,7 +404,7 @@ public class EmailUtils {
                             "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 20px 10px 10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                             "        \n" +
                             "  <div style=\"font-size: 14px; color: #ffffff; line-height: 140%; text-align: right; word-wrap: break-word;\">\n" +
-                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Price</strong></span></p>\n" +
+                            "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Giá</strong></span></p>\n" +
                             "  </div>\n" +
                             "\n" +
                             "      </td>\n" +
@@ -569,7 +569,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 15px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><b>Shipping fee:<b></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><b>Phí ship:<b></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -629,7 +629,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Total amount:</strong></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%; text-align: right;\"><span style=\"font-size: 16px; line-height: 22.4px;\"><strong>Tổng tiền:</strong></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -688,7 +688,7 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Billing Shipping address</strong></h4>\n" +
+                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Địa chỉ nhận hàng</strong></h4>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -721,7 +721,7 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Payment method</strong></h4>\n" +
+                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Phương thức thanh toán</strong></h4>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -733,7 +733,7 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:6px 10px 10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <h3 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\">Wire transfer</h3>\n" +
+                "  <h3 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\">Chuyển khoản</h3>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -769,7 +769,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\">Great news, your order is on its way! Thank you for choosing Twinkle as E-commerce platform!</span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\">Chúc mừng, đơn hàng của bạn đã được gửi đi thành công! Cảm ơn bạn đã tin tưởng và chọn chúng tôi làm nền tảng mua sắm đá núi lửa!</span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -783,9 +783,9 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"line-height: 140%;\">This is an automated email, please do not respond to this email.</p>\n" +
-                "<p style=\"line-height: 140%;\">Sincerely thank you,</p>\n" +
-                "<p style=\"line-height: 140%;\">Twinkle (Chan Quang Dev)<br>Support Team</p>\n" +
+                "    <p style=\"line-height: 140%;\">Đây là một email tự động, vui lòng không trả lời email này.</p>\n" +
+                "<p style=\"line-height: 140%;\">Chân thành cảm ơn bạn,</p>\n" +
+                "<p style=\"line-height: 140%;\">Liên hệ: <a href=\"tel:+0918 245 977\">0918 245 977</a></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +

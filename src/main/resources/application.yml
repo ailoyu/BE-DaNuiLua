@@ -7,6 +7,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: y4pr5yg4k5iigw4o
     password: y5d95njasaembq3j
+
+  spring:
+
   jpa:
     show-sql: true
     hibernate:
@@ -30,3 +33,5 @@ jwt:
   expiration: 2592000
     #30 days = 30 * 24 * 60 * 60
   secretKey: XsxIrJU5YktIqIJDJr7sYUrUYx+joroTKsMAwjqigm8=
+
+
