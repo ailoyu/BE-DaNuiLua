@@ -95,7 +95,7 @@ public class EmailUtils {
         }
     }
 
-    public static String getEmailContentAdmin(Order order, List<OrderDetail> orderDetails) {
+    public static String getEmailContent(Order order, List<OrderDetail> orderDetails) {
 
         String noiDung = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional //EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n" +
@@ -858,7 +858,7 @@ public class EmailUtils {
         return noiDung;
     }
 
-    public static String getEmailContent(Order order, List<OrderDetail> orderDetails) {
+    public static String getEmailContentAdmin(Order order, List<OrderDetail> orderDetails) {
 
         String noiDung = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional //EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n" +
