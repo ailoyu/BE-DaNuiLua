@@ -107,11 +107,14 @@ public class OrderService implements IOrderService {
             orderRepository.save(order);
 
         /// Gửi email sau khi order
-        String emailContent = EmailUtils.getEmailContent(order, listOrder);
 
         String[] recipients = {order.getEmail(), "quangtrinhhuynh02@gmail.com", "huynhhong042@gmail.com"};
 
-        EmailUtils.sendEmail(recipients, "Đá núi lửa Hồng Quang | Chúc mừng! Đơn hàng của bạn đã được đặt thành công và đang xử lý!!", emailContent);
+
+        String emailContent = EmailUtils.getEmailContent(order, listOrder, recipients);
+
+
+        EmailUtils.sendEmail(recipients, emailContent);
 
         return order;
     }

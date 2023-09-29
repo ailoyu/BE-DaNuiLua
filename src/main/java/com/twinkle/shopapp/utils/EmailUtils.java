@@ -41,7 +41,7 @@ public class EmailUtils {
     final static String from = "danuiluahongquang@gmail.com";
     final static String password = "siwaslsscstrecwt";
 
-    public static void sendEmail(String[] to, String tieuDe, String noiDung) {
+    public static void sendEmail(String[] to, String noiDung) {
 
 
         // Properties : khai báo các thuộc tính
@@ -82,8 +82,18 @@ public class EmailUtils {
                 recipientAddresses[i] = new InternetAddress(to[i]);
             }
             msg.setRecipients(Message.RecipientType.TO, recipientAddresses);
+
+
             // Tiêu đề email
-            msg.setSubject(tieuDe, "UTF-8");
+            for (String email: to) {
+                if(email.equals("quangtrinhhuynh02@gmail.com") || email.equals("huynhhong042@gmail.com")){
+                    msg.setSubject("Bạn vừa có thêm 1 đơn hàng | Vui lòng vào xác nhận đơn hàng!", "UTF-8");
+                } else {
+                    msg.setSubject("Đá núi lửa Hồng Quang | Chúc mừng! Đơn hàng của bạn đã được đặt thành công và đang xử lý!!", "UTF-8");
+                }
+            }
+
+
             // Quy định ngày gửi
             msg.setSentDate(new Date());
 
@@ -101,7 +111,18 @@ public class EmailUtils {
         }
     }
 
-    public static String getEmailContent(Order order, List<OrderDetail> orderDetails) {
+    // Helper function to check if recipients contain a specific email
+    private static boolean containsRecipient(String[] recipients, String targetEmail) {
+        for (String recipient : recipients) {
+            if (recipient.equals(targetEmail)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public static String getEmailContent(Order order, List<OrderDetail> orderDetails, String[] recipients) {
 
         String noiDung = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional //EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n" +
@@ -253,9 +274,13 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <div style=\"font-size: 42px; line-height: 140%; text-align: center; word-wrap: break-word;\">\n" +
-                "    <p style=\"line-height: 140%;\"><strong><span style=\"color: #ecf0f1; line-height: 58.8px;\">Đặt hàng thành công!</span></strong></p>\n" +
-                "  </div>\n" +
+                "  <div style=\"font-size: 42px; line-height: 140%; text-align: center; word-wrap: break-word;\">\n";
+        if (containsRecipient(recipients, "quangtrinhhuynh02@gmail.com") || containsRecipient(recipients, "huynhhong042@gmail.com")) {
+            noiDung += "    <p style=\"line-height: 140%;\"><strong><span style=\"color: #ecf0f1; line-height: 58.8px;\">Hồng Quang</span></strong></p>\n";
+        } else {
+            noiDung += "    <p style=\"line-height: 140%;\"><strong><span style=\"color: #ecf0f1; line-height: 58.8px;\">Đặt hàng thành công!</span></strong></p>\n";
+        }
+               noiDung += "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -310,10 +335,16 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <div style=\"font-size: 14px; line-height: 130%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Cảm ơn "+ order.getFullName()+",</span></strong></span></p>\n" +
-                "<p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Đơn hàng của bạn đang đuợc xử lý và chờ xác nhận</span></strong></span></p>\n" +
-                "  </div>\n" +
+                "  <div style=\"font-size: 14px; line-height: 130%; text-align: left; word-wrap: break-word;\">\n";
+        if (containsRecipient(recipients, "quangtrinhhuynh02@gmail.com") || containsRecipient(recipients, "huynhhong042@gmail.com")) {
+            noiDung += "    <p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Bạn vừa có 1 đơn hàng, xin vui lòng vào xác nhận!</span></strong></span></p>\n" +
+                    "<p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Đơn hàng đang được chờ xác nhận</span></strong></span></p>\n";
+        } else {
+            noiDung += "    <p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Cảm ơn "+ order.getFullName()+",</span></strong></span></p>\n" +
+                    "<p style=\"font-size: 14px; line-height: 130%; text-align: center;\"><span style=\"font-size: 30px; line-height: 39px; color: #3598db;\"><strong><span style=\"line-height: 39px; font-family: Poppins, sans-serif; font-size: 30px;\">Đơn hàng của bạn đang đuợc xử lý và chờ xác nhận</span></strong></span></p>\n";
+        }
+
+          noiDung +=      "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -326,7 +357,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:25px 10px 20px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">Email này là để xác nhận đơn hàng của bạn </span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>Mã đơn hàng: "+order.getId()+"</strong></span></span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%; text-align: center;\"><span style=\"color: #ecf0f1; font-size: 14px; line-height: 19.6px;\"><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\">Email này là để xác nhận đơn hàng có </span><span style=\"font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;\"><strong>mã đơn hàng: "+order.getId()+"</strong></span></span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -774,9 +805,14 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\">Chúc mừng, đơn hàng của bạn đã được gửi đi thành công! Cảm ơn bạn đã tin tưởng và chọn chúng tôi làm nền tàng mua sắm đá núi lửa!</span></p>\n" +
-                "  </div>\n" +
+                "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n";
+        if (containsRecipient(recipients, "quangtrinhhuynh02@gmail.com") || containsRecipient(recipients, "huynhhong042@gmail.com")) {
+            noiDung += "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\"><strong>Người mua hàng: <strong> "+order.getFullName()+" </span></p>\n";
+        } else {
+            noiDung += "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\">Chúc mừng, đơn hàng của bạn đã được gửi đi thành công! Cảm ơn bạn đã tin tưởng và chọn chúng tôi làm nền tàng mua sắm đá núi lửa!</span></p>\n";
+        }
+
+          noiDung +=      "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
