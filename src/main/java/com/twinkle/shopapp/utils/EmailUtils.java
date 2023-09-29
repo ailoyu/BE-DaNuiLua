@@ -743,7 +743,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\"><strong>Tên người mua: </strong>"+order.getFullName()+"</span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\">Chúc mừng, đơn hàng của bạn đã được gửi đi thành công! Cảm ơn bạn đã tin tưởng và chọn chúng tôi làm nền tảng mua sắm đá núi lửa!</span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
@@ -1458,7 +1458,7 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Phương thức thanh toán</strong></h4>\n" +
+                "  <h4 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\"><strong>Số điện thoại</strong></h4>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -1470,7 +1470,7 @@ public class EmailUtils {
                 "    <tr>\n" +
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:6px 10px 10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
-                "  <h3 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\">Chuyển khoản</h3>\n" +
+                "  <h3 style=\"margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;\">"+order.getPhoneNumber()+"</h3>\n" +
                 "\n" +
                 "      </td>\n" +
                 "    </tr>\n" +
@@ -1506,7 +1506,7 @@ public class EmailUtils {
                 "      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 0px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\n" +
                 "        \n" +
                 "  <div style=\"font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-                "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\"><strong>Chúc mừng, đơn hàng của bạn đã được gửi đi thành công! Cảm ơn bạn đã tin tưởng và chọn chúng tôi làm nền tảng mua sắm đá núi lửa!</span></p>\n" +
+                "    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 14px; line-height: 19.6px;\"><strong>Tên người mua: </strong>"+order.getFullName()+"</span></p>\n" +
                 "  </div>\n" +
                 "\n" +
                 "      </td>\n" +
